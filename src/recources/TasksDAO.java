@@ -38,4 +38,9 @@ public class TasksDAO {
 	public SubReddit getSubRedditByName(String subName) {
 		return em.find(SubReddit.class, subName);
 	}
+	
+	public List<Post> getMostVotedPosts(int listSize) {
+		List<Post> list =em.createQuery( "SELECT p FROM posts p ORDER BY vote DESC", Post.class).getResultList();
+		return list.subList(0, listSize);
+	}
 }

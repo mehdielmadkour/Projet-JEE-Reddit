@@ -28,8 +28,8 @@ public class Post {
 	@Column(name = "subName")
 	private String subName;
 
-	@Column(name = "likes")
-	private int like;
+	@Column(name = "votes")
+	private int vote;
 	
 	@Column(name = "time")
 	private Timestamp time;
@@ -62,12 +62,12 @@ public class Post {
 		this.comments = comments;
 	}
 
-	public int getLike() {
-		return like;
+	public int getVote() {
+		return vote;
 	}
 
-	public void setLike(int like) {
-		this.like = like;
+	public void setVote(int vote) {
+		this.vote = vote;
 	}
 
 	public Timestamp getTime() {
