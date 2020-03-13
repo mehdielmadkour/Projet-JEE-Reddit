@@ -73,7 +73,7 @@ public class Home extends HttpServlet {
 		if (request.getParameter("subName") != null) this.subName = request.getParameter("subName");
 		if (request.getParameter("postContent") != null) this.postContent = request.getParameter("postContent");
 		
-		response.sendRedirect("/projet_reddit/Home");
+		response.sendRedirect("Home");
 	}
 
 }

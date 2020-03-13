@@ -5,14 +5,14 @@
 <%@include file="head.jsp"%>
 <body>
 
-	<form action="/projet_reddit/Home" method="post">
+	<form action="Home" method="post">
 		<input type="hidden" name="action" value="newSub"/>
 		<input type="text" name="subName"/>
 		<input type="submit" value="New Sub" class="button">
 	</form>
 	
 	
-	<form action="/projet_reddit/Home" method="post">
+	<form action="Home" method="post">
 		<input type="hidden" name="action" value="newPost"/>
 		<input type="text" name="subName"/>
 		<input type="text" name="postContent"/>
