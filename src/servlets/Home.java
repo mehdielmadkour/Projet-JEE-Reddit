@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -58,6 +59,10 @@ public class Home extends HttpServlet {
 			tasksDAO.newPost(post, sub);
 			this.action = null;
 		}
+		
+		List<recources.Post> votedPosts = tasksDAO.getMostVotedPosts(10);
+		
+		request.setAttribute("posts", votedPosts);
 		
 		getServletContext()
 		.getRequestDispatcher(url).
