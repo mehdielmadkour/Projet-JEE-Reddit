@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import recources.SubReddit;
-import recources.TasksDAO;
+import ressources.SubReddit;
+import ressources.TasksDAO;
 
 /**
  * Servlet implementation class Home
@@ -53,14 +53,14 @@ public class Home extends HttpServlet {
 		if ("newPost".equals(action)) {
 
 			SubReddit sub = tasksDAO.getSubRedditByName(this.subName);
-			recources.Post post = new recources.Post();
+			ressources.Post post = new ressources.Post();
 			post.setContent(this.postContent);
 			post.setSubName(this.subName);
 			tasksDAO.newPost(post, sub);
 			this.action = null;
 		}
 		
-		List<recources.Post> votedPosts = tasksDAO.getMostVotedPosts(10);
+		List<ressources.Post> votedPosts = tasksDAO.getMostVotedPosts(10);
 		
 		request.setAttribute("posts", votedPosts);
 		

@@ -1,4 +1,4 @@
-package recources;
+package ressources;
 
 import java.util.ArrayList;
 import java.util.List;
