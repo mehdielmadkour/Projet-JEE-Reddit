@@ -24,7 +24,6 @@
     <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out></h5>
     <p> <img src="img/quokka.jpg" class="card-img-top" alt="quokka">
           </p>
-    <a href="" data-toggle="modal" data-target="#exampleModal" class="card-link"><c:out value = "${Post.getNbComments()} commentaire"></c:out></a>
     <a href="" class="card-link">share</a>
   </div>
 </div>
@@ -41,9 +40,6 @@
         </button>
       </div>
       
-      <div class="modal-body">
-        <textarea class="form-control" name="comment" value="${Post.getComments()}" ></textarea>
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         <button type="submit" class="btn btn-primary">Envoyer</button>

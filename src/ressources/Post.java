@@ -22,8 +22,8 @@ public class Post {
 	@Column(name = "user")
 	private User user;
 	
-	@Column(name = "comments")
-	private ArrayList<Comment> comments;
+	//@Column(name = "comments")
+	//private ArrayList<Comment> comments;
 	
 	@Column(name = "subName")
 	private String subName;
@@ -54,13 +54,13 @@ public class Post {
 		this.user = user;
 	}
 
-	public ArrayList<Comment> getComments() {
+	/*public ArrayList<Comment> getComments() {
 		return comments;
 	}
 
 	public void setComments(ArrayList<Comment> comments) {
 		this.comments = comments;
-	}
+	}*/
 
 	public int getVote() {
 		return vote;
