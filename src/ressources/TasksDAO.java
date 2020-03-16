@@ -46,4 +46,12 @@ public class TasksDAO {
 		if (list.size() < listSize) return list;
 		else return list.subList(0, listSize);
 	}
+	
+	public List<SubReddit> getSubs(int listSize) {
+			
+		List<SubReddit> list = em.createQuery( "SELECT s FROM SubReddit s", SubReddit.class).getResultList();
+		
+		if (list.size() < listSize) return list;
+		else return list.subList(0, listSize);
+	}
 }

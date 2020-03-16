@@ -43,9 +43,9 @@
 	
 		<br>
 		
-		<p>Popular posts</p>
 		<div class="row">
 			<div class="col-8">
+				<p>Popular posts</p>
 				<c:forEach var="Post" items="${posts}">
 					<%@include file="post.jsp"%>
 				</c:forEach>
@@ -54,7 +54,7 @@
 			
 			<div class="col-4">
 				<p>Subs</p>
-				TODO
+				<%@include file="subList.jsp"%>
 			</div>
 		</div>
 	</div>
