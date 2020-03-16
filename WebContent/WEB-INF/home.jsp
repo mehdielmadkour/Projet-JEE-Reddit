@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <%@include file="head.jsp"%>
@@ -31,5 +32,11 @@
 		<input type="text" name="postContent"/>
 		<input type="submit" value="New Post" class="button">
 	</form>
+	
+	<div class="container">
+		<c:forEach var="post" items="${posts}">
+			<%@include file="post.jsp"%>
+		</c:forEach>
+	</div>
 </body>
 </html>
