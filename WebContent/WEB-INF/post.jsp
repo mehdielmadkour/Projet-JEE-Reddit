@@ -1,32 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="head.jsp" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
 
-
-
-<div class="card" style="width: 18rem;">
-	<div class="card-header">
-    	<c:out value = "${Post.getSubName()}   "></c:out>
-    	<c:out value = "Posted by ${Post.getUser()}"></c:out>
-    	<c:out value = "${Post.getTime()}"></c:out>
-  	</div>
+		<div class="card">
+			<div class="card-header">
+		    	<c:out value = "${Post.getSubName()}   "></c:out>
+		    	<c:out value = "Posted by ${Post.getUser()}"></c:out>
+		    	<c:out value = "${Post.getTime()}"></c:out>
+		  	</div>
   	
-  <div class="card-body">
-    <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out></h5>
-    <p> <img src="img/quokka.jpg" class="card-img-top" alt="quokka">
-          </p>
-    <a href="" class="card-link">share</a>
-  </div>
-</div>
+		  <div class="card-body">
+		    <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out></h5>
+		    <p> <img src="img/quokka.jpg" class="card-img-top" alt="quokka">
+		          </p>
+		    <a href="" class="card-link">share</a>
+		  </div>
+		</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,6 +38,3 @@
     </div>
   </div>
 </div>
-
-</body>
-</html>
