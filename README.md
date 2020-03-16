@@ -3,6 +3,7 @@
 A faire :  
 - Design des posts  
 - Binding des variables sur le post   
+- Gérer la persistence des posts
 - Servlet Post  
 - Servlet Sub  
 - Affichage des commentaires  
