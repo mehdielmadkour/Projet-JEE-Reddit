@@ -34,7 +34,7 @@
 	</form>
 	
 	<div class="container">
-		<c:forEach var="post" items="${posts}">
+		<c:forEach var="Post" items="${posts}">
 			<%@include file="post.jsp"%>
 		</c:forEach>
 	</div>
