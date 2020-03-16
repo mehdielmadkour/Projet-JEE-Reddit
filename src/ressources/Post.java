@@ -22,6 +22,14 @@ public class Post {
 	@Column(name = "user")
 	private User user;
 	
+<<<<<<< HEAD
+||||||| 4bee226
+	@Column(name = "comments")
+	private ArrayList<Comment> comments;
+=======
+	//@Column(name = "comments")
+	//private ArrayList<Comment> comments;
+>>>>>>> b9ec1ecf296bade95276631ecbf92cc3c046b156
 	
 	@Column(name = "subName")
 	private String subName;
@@ -52,7 +60,25 @@ public class Post {
 		this.user = user;
 	}
 
+<<<<<<< HEAD
 	
+||||||| 4bee226
+	public ArrayList<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(ArrayList<Comment> comments) {
+		this.comments = comments;
+	}
+=======
+	/*public ArrayList<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(ArrayList<Comment> comments) {
+		this.comments = comments;
+	}*/
+>>>>>>> b9ec1ecf296bade95276631ecbf92cc3c046b156
 
 	public int getVote() {
 		return vote;

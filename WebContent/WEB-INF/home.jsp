@@ -34,9 +34,29 @@
 	</form>
 	
 	<div class="container">
-		<c:forEach var="Post" items="${posts}">
-			<%@include file="post.jsp"%>
-		</c:forEach>
+	
+		
+		<p>Trending today</p>
+		<div class="row">
+			TODO
+		</div>
+	
+		<br>
+		
+		<div class="row">
+			<div class="col-8">
+				<p>Popular posts</p>
+				<c:forEach var="Post" items="${posts}">
+					<%@include file="post.jsp"%>
+				</c:forEach>
+			</div>
+			
+			
+			<div class="col-4">
+				<p>Subs</p>
+				<%@include file="subList.jsp"%>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
