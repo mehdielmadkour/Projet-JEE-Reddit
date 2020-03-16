@@ -3,7 +3,7 @@
 
  <persistence-unit name="RedditPU" transaction-type="JTA">
 <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-   <jta-data-source>MyDatabase</jta-data-source>
+   <jta-data-source>Database</jta-data-source>
     <class>classes Entity</class>
     <properties>
         <property name="openjpa.jdbc.DBDictionary" value="mysql" />

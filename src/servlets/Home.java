@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import ressources.SubReddit;
 import ressources.TasksDAO;
 
+
 /**
  * Servlet implementation class Home
  */
@@ -23,7 +24,8 @@ public class Home extends HttpServlet {
 	private String subName;
 	private String postContent;
 	private String action = null;
-	
+	private int idPost;
+	private String comment;
 	
 	@EJB
 	private TasksDAO tasksDAO;
@@ -60,6 +62,16 @@ public class Home extends HttpServlet {
 			this.action = null;
 		}
 		
+		if ("addComment".equals(action)) {
+
+			ressources.Comment commentaire = new ressources.Comment();
+			commentaire.setId(this.idPost);
+			commentaire.setContent(this.comment);
+			tasksDAO.newComment(commentaire);
+			this.action = null;
+		}
+		
+		
 		List<ressources.Post> votedPosts = tasksDAO.getMostVotedPosts(10);
 		
 		request.setAttribute("posts", votedPosts);
@@ -77,6 +89,10 @@ public class Home extends HttpServlet {
 		if (request.getParameter("action") != null) this.action = request.getParameter("action");
 		if (request.getParameter("subName") != null) this.subName = request.getParameter("subName");
 		if (request.getParameter("postContent") != null) this.postContent = request.getParameter("postContent");
+		if (request.getParameter("idPost") != null) this.idPost = Integer.valueOf(request.getParameter("idPost"));
+		if (request.getParameter("comment") != null) this.comment = request.getParameter("comment");
+		
+		
 		
 		response.sendRedirect("Home");
 	}
