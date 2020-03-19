@@ -21,18 +21,22 @@
 
 	<form action="Home" method="post">
 		<input type="hidden" name="action" value="newSub"/>
-		<input type="text" name="subName"/>
+		<input type="text" name="subName" placeholder="nom du sub"/>
 		<input type="submit" value="New Sub" class="button">
 	</form>
 	
-	
-	<form action="Home" method="post">
-		<input type="hidden" name="action" value="newPost"/>
-		<input type="text" name="subName"/>
-		<input type="text" name="postContent"/>
-		<input type="submit" value="New Post" class="button">
-	</form>
-	
+	<div class="card">
+		<div class="card-body">
+			<form action="Home" method="post">
+				<input type="hidden" name="action" value="newPost"/>
+				<input type="text" name="subName" placeholder="nom du sub"/>
+				<input type="hidden" name="user" value="Thibaut"/>
+				<input type="text" name="postContent" placeholder="contenu du sub"/>
+				<input type="submit" value="New Post" class="button">
+				<input type="file" id="fichier" name="fichier" />
+			</form>
+		</div>
+	</div>
 	<div class="container">
 	
 		

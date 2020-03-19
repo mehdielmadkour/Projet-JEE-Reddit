@@ -21,9 +21,6 @@ public class Post {
 	
 	@Column(name = "user")
 	private User user;
-
-	
-	
 	
 	@Column(name = "subName")
 	private String subName;
@@ -72,7 +69,7 @@ public class Post {
 	public void setVote(int vote) {
 		this.vote = vote;
 	}
-
+	
 	public Timestamp getTime() {
 		return time;
 	}

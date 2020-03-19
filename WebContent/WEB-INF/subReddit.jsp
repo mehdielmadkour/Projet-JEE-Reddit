@@ -2,9 +2,10 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<%@include file="head.jsp"%>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>subReddit</title>
 </head>
 <body>
 

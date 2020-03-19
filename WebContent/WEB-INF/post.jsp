@@ -12,13 +12,16 @@
 
 <div class="card">
 	<div class="card-header">
-    	<c:out value = "${Post.getSubName()}   "></c:out>
+	<a href="Post" class="card-link">
+		<c:out value = "${Post.getSubName()}   "></c:out>
     	<c:out value = "Posted by ${Post.getUser()}"></c:out>
     	<c:out value = "${Post.getTime()}"></c:out>
+	</a>
+    	
   	</div>
 	
   <div class="card-body">
-    <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out></h5>
+    <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out> <c:out value = " ${Post.getId()}"></c:out></h5>
     <p> <img src="img/quokka.jpg" class="card-img-top" alt="quokka">
           </p>
 
@@ -45,14 +48,14 @@
       </div>
 
       <div class="modal-body">
-        <textarea class="form-control" name="comment" ></textarea>
-        <input type="hidden" name="idpost" value="${Post.getId()}">
+        <textarea class="form-control" name="comment" ><c:out value = "id: ${Post.getId()}"></c:out></textarea>
+        <input type="hidden" name="idPost" value="${Post.getId()}">
         <input type="hidden" name="action" value="addComment">
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
       </div>
        
       </form>

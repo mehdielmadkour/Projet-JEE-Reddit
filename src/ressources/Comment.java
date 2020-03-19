@@ -21,7 +21,17 @@ public class Comment {
 	@Column(name = "user")
 	private User user;
 	
+	@Column(name = "idPost")
+	private int idPost;
 	
+	@Column(name = "likes")
+	private int like;
+	
+	@Column(name = "response")
+	private ArrayList<Comment> comments;
+	
+	@Column(name = "content")
+	private String content;
 
 	public int getId() {
 		return id;
@@ -29,6 +39,14 @@ public class Comment {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public int getIdPost() {
+		return this.idPost;
+	}
+
+	public void setIdPost(int idPost) {
+		this.idPost = idPost;
 	}
 
 	public User getUser() {
@@ -63,12 +81,5 @@ public class Comment {
 		this.content = content;
 	}
 
-	@Column(name = "likes")
-	private int like;
 	
-	@Column(name = "response")
-	private ArrayList<Comment> comments;
-	
-	@Column(name = "content")
-	private String content;
 }
