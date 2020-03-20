@@ -27,7 +27,7 @@
 	
 	<div class="card">
 		<div class="card-body">
-			<form action="Home" enctype="multipart/form-data" method="post">
+			<form action="Home" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="newPost"/>
 				<input type="text" name="subName" placeholder="nom du sub"/>
 				<input type="hidden" name="user" value="Thibaut"/>

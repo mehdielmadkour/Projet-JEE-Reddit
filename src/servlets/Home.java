@@ -39,7 +39,7 @@ public class Home extends HttpServlet {
 	
 	public static final String CHEMIN = "C:/Users/Titi/eclipse-workspace/Reddit_project/WebContent/img/";
 	public static final int TAILLE_TAMPON = 10240;
-	private static final String Champ_Fichier = "fichier";
+	public static final String Champ_Fichier = "fichier";
 
 	
 	@EJB
@@ -77,6 +77,8 @@ public class Home extends HttpServlet {
 			ressources.Post post = new ressources.Post();
 			
 
+			
+			
 			post.setContent(this.postContent);
 			post.setSubName(this.subName);
 			tasksDAO.newPost(post, sub);
@@ -115,9 +117,8 @@ public class Home extends HttpServlet {
 		if (request.getParameter("idPost") != null) this.idPost = Integer.valueOf(request.getParameter("idPost"));
 		if (request.getParameter("comment") != null) this.comment = request.getParameter("comment");
 		
-		
 		/** file input logic **/
-		String chemin = this.getServletConfig().getInitParameter(CHEMIN);
+		
 		
 		Part part = request.getPart( Champ_Fichier );
 		String nomFichier = getNomFichier ( part );
@@ -127,14 +128,17 @@ public class Home extends HttpServlet {
 
 			nomFichier= nomFichier.substring(nomFichier.lastIndexOf('/') + 1).substring(nomFichier.lastIndexOf('\\') + 1);
 			
-			ecrireFichier (part, nomFichier, chemin);
+			ecrireFichier (part, nomFichier, CHEMIN);
 			
 			request.setAttribute(nomChamp, nomFichier);
 		}
 		
-		response.sendRedirect("Home");
+		
 		
 		/** End file inpu logic **/
+		
+		response.sendRedirect("Home");
+		
 	}
 
 
