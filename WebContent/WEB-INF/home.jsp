@@ -27,13 +27,14 @@
 	
 	<div class="card">
 		<div class="card-body">
-			<form action="Home" method="post">
+			<form action="Home" enctype="multipart/form-data" method="post">
 				<input type="hidden" name="action" value="newPost"/>
 				<input type="text" name="subName" placeholder="nom du sub"/>
 				<input type="hidden" name="user" value="Thibaut"/>
 				<input type="text" name="postContent" placeholder="contenu du sub"/>
-				<input type="submit" value="New Post" class="button">
 				<input type="file" id="fichier" name="fichier" />
+				<input type="submit" value="New Post" class="button">
+				
 			</form>
 		</div>
 	</div>

@@ -26,7 +26,7 @@ import ressources.TasksDAO;
 /**
  * Servlet implementation class Home
  */
-@MultipartConfig(maxFileSize=1699999999, location="/WebContent/img/", maxRequestSize=52428800, fileSizeThreshold=1048576)
+@MultipartConfig(maxFileSize=10485760, location="C:/Users/Titi/eclipse-workspace/Reddit_project/WebContent/tmp/", maxRequestSize=52428800, fileSizeThreshold=1048576)
 @WebServlet("/Home")
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,7 +37,7 @@ public class Home extends HttpServlet {
 	private int idPost;
 	private String comment;
 	
-	public static final String CHEMIN = "chemin";
+	public static final String CHEMIN = "C:/Users/Titi/eclipse-workspace/Reddit_project/WebContent/img/";
 	public static final int TAILLE_TAMPON = 10240;
 	private static final String Champ_Fichier = "fichier";
 
@@ -119,7 +119,7 @@ public class Home extends HttpServlet {
 		/** file input logic **/
 		String chemin = this.getServletConfig().getInitParameter(CHEMIN);
 		
-		Part part = request.getPart( Champ_Fichier);
+		Part part = request.getPart( Champ_Fichier );
 		String nomFichier = getNomFichier ( part );
 		
 		if(nomFichier!= null  && !nomFichier.isEmpty()) {
@@ -139,11 +139,11 @@ public class Home extends HttpServlet {
 
 
 	private void ecrireFichier( Part part, String nomFichier, String chemin ) throws IOException {
-	    /* Prépare les flux. */
+	    
 	    BufferedInputStream entree = null;
 	    BufferedOutputStream sortie = null;
 	    try {
-	        /* Ouvre les flux. */
+	        
 	        entree = new BufferedInputStream( part.getInputStream(), TAILLE_TAMPON );
 	        sortie = new BufferedOutputStream( new FileOutputStream( new File( chemin + nomFichier ) ),
 	                TAILLE_TAMPON );
