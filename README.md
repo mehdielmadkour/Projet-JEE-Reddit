@@ -1,17 +1,16 @@
 # Projet-JEE-Reddit
 
 A faire :  
-- Design des posts  
-- Binding des variables sur le post   
-- Gérer la persistence des posts
-- Servlet Post  
-- Servlet Sub  
 - Affichage des commentaires  
-- Affichage des Sub  
 - Vote des posts  
-- Ajout d'un commentaire  
-- Ajout d'un post  
+- Ajout d'un commentaire  (oneToMany - ManyToOne)
 
 Fait :
+- Design des posts  
+- Servlet Sub  
+- Affichage des Sub  
+- Ajout d'un post  
 - Servlet Home 
 - Ajout d'un sub  
+- Binding des variables sur le post  
+- Gérer la persistence des posts
