@@ -78,11 +78,11 @@
 				    <span class="input-group-text" id="inputGroupFileAddon01">Image:</span>
 				  </div>
 				  <div class="custom-file" >
-				    <input type="file" class="custom-file-input" id="fichier" name="fichier">
+				    
 				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Parcourir...</label>
 				  </div>
 				</div>
-				
+				<input type="file" class="custom-file-input" id="fichier" name="fichier">
 				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
 				
 			</form>

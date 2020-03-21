@@ -26,7 +26,7 @@ import ressources.TasksDAO;
 /**
  * Servlet implementation class Home
  */
-@MultipartConfig(maxFileSize=10485760, location="C:/Users/Titi/eclipse-workspace/Reddit_project/WebContent/tmp/", maxRequestSize=52428800, fileSizeThreshold=1048576)
+@MultipartConfig(maxFileSize=10485760, maxRequestSize=52428800, fileSizeThreshold=1048576)
 @WebServlet("/Home")
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,10 +37,9 @@ public class Home extends HttpServlet {
 	private int idPost;
 	private String comment;
 	private String url;
-	
-	public static final String CHEMIN = "C:/Users/Titi/eclipse-workspace/Reddit_project/WebContent/img/";
-	public static final int TAILLE_TAMPON = 10240;
-	public static final String Champ_Fichier = "fichier";
+
+	private final String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\Projet-JEE-Reddit\\img\\";
+	private final int TAILLE_TAMPON = 10240;
 
 	
 	@EJB
@@ -122,7 +121,7 @@ public class Home extends HttpServlet {
 		/** file input logic **/
 		
 		if ("newPost".equals(this.action)) {
-		Part part = request.getPart( Champ_Fichier );
+		Part part = request.getPart("fichier");
 		String nomFichier = getNomFichier ( part );
 		
 		if(nomFichier!= null  && !nomFichier.isEmpty()) {
@@ -150,26 +149,19 @@ public class Home extends HttpServlet {
 	    
 	    BufferedInputStream entree = null;
 	    BufferedOutputStream sortie = null;
-	    try {
-	        
-	        entree = new BufferedInputStream( part.getInputStream(), TAILLE_TAMPON );
-	        sortie = new BufferedOutputStream( new FileOutputStream( new File( chemin + nomFichier ) ),
-	                TAILLE_TAMPON );
-	 
-	        byte[] tampon = new byte[TAILLE_TAMPON];
-	        int longueur;
-	        while ( ( longueur = entree.read( tampon ) ) > 0 ) {
-	            sortie.write( tampon, 0, longueur );
-	        }
-	    } finally {
-	        try {
-	            sortie.close();
-	        } catch ( IOException ignore ) {
-	        }
-	        try {
-	            entree.close();
-	        } catch ( IOException ignore ) {
-	        }}
+	    System.out.println(chemin + nomFichier);
+        entree = new BufferedInputStream( part.getInputStream(), TAILLE_TAMPON );
+        File file = new File( chemin + nomFichier );
+        file.createNewFile();
+        sortie = new BufferedOutputStream( new FileOutputStream(file),TAILLE_TAMPON );
+ 
+        byte[] tampon = new byte[TAILLE_TAMPON];
+        int longueur;
+        while ( ( longueur = entree.read( tampon ) ) > 0 ) {
+            sortie.write( tampon, 0, longueur );
+        }
+        sortie.close();
+        entree.close();
 	    }
 		
 	private static String getNomFichier( Part part ) {
