@@ -18,14 +18,31 @@
 	    	<button class="btn btn-outline-success mr-1 my-sm-0" type="submit">SIGN UP</button>
 	  	</form>
 	</nav>
-
+	
+	<div class="row">
+	<div class="col-sm-4">
+	<div class="card" style="width: 90%;margin-top: 100px;margin-left: 60px;">
+	<div class="card-header">
+    	Création d'un sub
+  	</div>
+  	<div class="card-body">
 	<form action="Home" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="newSub"/>
-		<input type="text" name="subName" placeholder="nom du sub"/>
-		<input type="submit" value="New Sub" class="button">
+		<div class="input-group mb-3">
+		<div class="input-group-prepend">
+		   <label class="input-group-text" for="inputGroupSelect01">Sub Reddit:</label>
+		</div>
+		<input type="text" class="form-control" name="subName"/>
+		</div>
+		<input type="submit" class="btn btn-outline-info" value="New Sub" class="button">
 	</form>
+	</div>
+	<div class="card-footer"></div>
+	</div>
+	</div>
 	
-	<div class="card" style="width: 40rem;">
+	<div class="col-sm-8">
+	<div class="card" style="width: 90%; height: 90%">
 		<div class="card-header">
     	Création d'un post
   		</div>
@@ -61,7 +78,7 @@
 				    <span class="input-group-text" id="inputGroupFileAddon01">Image:</span>
 				  </div>
 				  <div class="custom-file" >
-				    <input type="file" class="custom-file-input" id="inputGroupFile02" name="fichier">
+				    <input type="file" class="custom-file-input" id="fichier" name="fichier">
 				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Parcourir...</label>
 				  </div>
 				</div>
@@ -72,6 +89,8 @@
 			
 		</div>
 		<div class="card-footer"></div>
+	</div>
+	</div>
 	</div>
 	<div class="container">
 	

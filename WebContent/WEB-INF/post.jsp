@@ -21,8 +21,8 @@
   	</div>
 	
   <div class="card-body">
-    <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out> <c:out value = " ${Post.getId()}"></c:out></h5>
-    <p> <img src="img/quokka.jpg" class="card-img-top" alt="quokka">
+    <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out></h5>
+    <p> <img src="${Post.getUrl()}" class="card-img-top" alt="quokka">
           </p>
 
 

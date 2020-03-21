@@ -13,8 +13,9 @@
 			<div class="row">
 			<form action="SubReddit">
 			<input type="hidden" name="subName" value="${Sub.getName()}"/>
-			<button class="button-transparent" type="submit">
+			<button class="button-transparent" type="submit">	
 			<c:out value="${compteur}"/> <c:out value="${Sub.getName()}"/>
+
 			</button>
 			
 			</form>

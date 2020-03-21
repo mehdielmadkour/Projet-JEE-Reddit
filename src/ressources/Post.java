@@ -22,6 +22,9 @@ public class Post {
 	@Column(name = "user")
 	private User user;
 	
+	@Column(name = "url")
+	private String url;
+	
 	@Column(name = "subName")
 	private String subName;
 
@@ -41,6 +44,14 @@ public class Post {
 
 	public void setSubName(String subName) {
 		this.subName = subName;
+	}
+	
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public User getUser() {

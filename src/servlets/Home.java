@@ -36,6 +36,7 @@ public class Home extends HttpServlet {
 	private String action = null;
 	private int idPost;
 	private String comment;
+	private String url;
 	
 	public static final String CHEMIN = "C:/Users/Titi/eclipse-workspace/Reddit_project/WebContent/img/";
 	public static final int TAILLE_TAMPON = 10240;
@@ -81,6 +82,7 @@ public class Home extends HttpServlet {
 			
 			post.setContent(this.postContent);
 			post.setSubName(this.subName);
+			post.setUrl(this.url);
 			tasksDAO.newPost(post, sub);
 			this.action = null;
 		}
@@ -127,6 +129,8 @@ public class Home extends HttpServlet {
 			String nomChamp = part.getName();
 
 			nomFichier= nomFichier.substring(nomFichier.lastIndexOf('/') + 1).substring(nomFichier.lastIndexOf('\\') + 1);
+			
+			this.url = "img/" + nomFichier;
 			
 			ecrireFichier (part, nomFichier, CHEMIN);
 			
