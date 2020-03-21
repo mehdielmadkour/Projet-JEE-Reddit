@@ -34,7 +34,7 @@
 		</div>
 		<input type="text" class="form-control" name="subName"/>
 		</div>
-		<input type="submit" class="btn btn-outline-info" value="New Sub" class="button">
+		<input type="submit" class="btn btn-outline-primary" value="New Sub" class="button">
 	</form>
 	</div>
 	<div class="card-footer"></div>
@@ -83,7 +83,7 @@
 				  </div>
 				</div>
 				
-				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
+				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
 				
 			</form>
 			
