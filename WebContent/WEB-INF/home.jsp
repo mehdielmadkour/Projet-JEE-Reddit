@@ -81,7 +81,6 @@
 				  </div>
 				  <br>
 				</div>
-				<input type="file" class="custom-file-input" id="fichier" name="fichier">
 				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
 				
 			</form>
