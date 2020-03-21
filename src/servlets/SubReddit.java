@@ -42,7 +42,7 @@ public class SubReddit extends HttpServlet {
 		String url = "/WEB-INF/subReddit.jsp";
 		
 		if (request.getParameter("subName") != null) {
-			List<ressources.Post> Posts = tasksDAO.getPosts("hello");
+			List<ressources.Post> Posts = tasksDAO.getPosts(request.getParameter("subName"));
 			request.setAttribute("posts", Posts);
 		}
 		
