@@ -82,16 +82,8 @@
 				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Parcourir...</label>
 				  </div>
 				</div>
-<<<<<<< HEAD
-				
-				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
-||||||| f152f15
-				
-				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
-=======
 				<input type="file" class="custom-file-input" id="fichier" name="fichier">
-				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
->>>>>>> ce537a633f0ff1fafdea1d2f9916ba88d9fe6cc1
+				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
 				
 			</form>
 			

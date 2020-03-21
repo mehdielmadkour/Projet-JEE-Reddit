@@ -68,23 +68,6 @@ public class Home extends HttpServlet {
 			tasksDAO.newSub(sub);
 			this.action = null;
 		}
-		if ("newPost".equals(action)) {
-
-			
-			
-			
-			SubReddit sub = tasksDAO.getSubRedditByName(this.subName);
-			ressources.Post post = new ressources.Post();
-			
-
-			
-			
-			post.setContent(this.postContent);
-			post.setSubName(this.subName);
-			post.setUrl(this.url);
-			tasksDAO.newPost(post, sub);
-			this.action = null;
-		}
 		
 		if ("addComment".equals(action)) {
 
@@ -118,62 +101,7 @@ public class Home extends HttpServlet {
 		if (request.getParameter("idPost") != null) this.idPost = Integer.valueOf(request.getParameter("idPost"));
 		if (request.getParameter("comment") != null) this.comment = request.getParameter("comment");
 		
-		/** file input logic **/
-		
-		if ("newPost".equals(this.action)) {
-		Part part = request.getPart("fichier");
-		String nomFichier = getNomFichier ( part );
-		
-		if(nomFichier!= null  && !nomFichier.isEmpty()) {
-			String nomChamp = part.getName();
-
-			nomFichier= nomFichier.substring(nomFichier.lastIndexOf('/') + 1).substring(nomFichier.lastIndexOf('\\') + 1);
-			
-			this.url = "img/" + nomFichier;
-			
-			ecrireFichier (part, nomFichier, CHEMIN);
-			
-			request.setAttribute(nomChamp, nomFichier);
-			}
-		}
-		
-		
-		/** End file inpu logic **/
-		
 		response.sendRedirect("Home");
 		
-	}
-
-
-	private void ecrireFichier( Part part, String nomFichier, String chemin ) throws IOException {
-	    
-	    BufferedInputStream entree = null;
-	    BufferedOutputStream sortie = null;
-	    System.out.println(chemin + nomFichier);
-        entree = new BufferedInputStream( part.getInputStream(), TAILLE_TAMPON );
-        File file = new File( chemin + nomFichier );
-        file.createNewFile();
-        sortie = new BufferedOutputStream( new FileOutputStream(file),TAILLE_TAMPON );
- 
-        byte[] tampon = new byte[TAILLE_TAMPON];
-        int longueur;
-        while ( ( longueur = entree.read( tampon ) ) > 0 ) {
-            sortie.write( tampon, 0, longueur );
-        }
-        sortie.close();
-        entree.close();
-	    }
-		
-	private static String getNomFichier( Part part ) {
-	    
-	    for ( String contentDisposition : part.getHeader( "content-disposition" ).split( ";" ) ) {
-	    	
-	        if ( contentDisposition.trim().startsWith("filename") ) {
-	
-	            return contentDisposition.substring( contentDisposition.indexOf( '=' ) + 1 ).trim().replace("\"", "");
-	        }
-	    }
-	   
-	    return null;
 	}
 }
