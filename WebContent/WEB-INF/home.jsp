@@ -8,8 +8,8 @@
 
 	<nav class="navbar navbar-light bg-light">
 		<a class="navbar-brand"><img src="img/logo_reddit_2.png" class="logo"></a>
-		<form class="form-inline mx-auto">
-	    	<input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search">
+		<form class="form-inline mx-auto"style="width: 60%">
+	    	<input class="form-control search-bar" style="width: 100%" type="search" placeholder="Search" aria-label="Search">
 	  	</form>
 		<form class="form-inline">
 	    	<button class="btn btn-outline-success mr-2 my-sm-0" type="submit">LOG IN</button>
@@ -19,12 +19,18 @@
 	  	</form>
 	</nav>
 	
+	
+	<div class="bg-all"> 
+	
+	<div class="contain">
 	<div class="row">
 	<div class="col-sm-4">
-	<div class="card" style="width: 90%;margin-top: 100px;margin-left: 60px;">
+	<div class="card" style="width: 100%;height: 50%">
 	<div class="card-header">
     	Création d'un sub
   	</div>
+  	
+  	
   	<div class="card-body">
 	<form action="Home" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="newSub"/>
@@ -42,7 +48,7 @@
 	</div>
 	
 	<div class="col-sm-8">
-	<div class="card" style="width: 90%; height: 90%">
+	<div class="card" style="width: 100%; height: 92%">
 		<div class="card-header">
     	Création d'un post
   		</div>
@@ -97,7 +103,50 @@
 		
 		<p>Trending today</p>
 		<div class="row">
-			TODO
+		
+			<div class="col mb-3">
+			<div class="card bg-dark text-white" >
+			  <img src="img\\quokka.jpg" class="card-img" alt="...">
+			  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
+			  <div class="mt-auto">
+			    <h3 class="card-text" >Sub Name</h3>
+			    <p class="card-text-bottom " >Content ...</p>
+			    </div>
+			  </div>
+			</div>
+			</div><div class="col mb-3">
+			<div class="card bg-dark text-white" >
+			  <img src="img\\quokka.jpg" class="card-img" alt="...">
+			  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
+			  <div class="mt-auto">
+			    <h3 class="card-text" >Sub Name</h3>
+			    <p class="card-text-bottom " >Content ...</p>
+			    </div>
+			  </div>
+			</div>
+			</div><div class="col mb-3">
+			<div class="card bg-dark text-white" >
+			  <img src="img\\quokka.jpg" class="card-img" alt="...">
+			  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
+			  <div class="mt-auto">
+			    <h3 class="card-text" >Sub Name</h3>
+			    <p class="card-text-bottom " >Content ...</p>
+			    </div>
+			  </div>
+			</div>
+			</div>
+			<div class="col mb-3">
+			<div class="card bg-dark text-white" >
+			  <img src="img\\quokka.jpg" class="card-img" alt="...">
+			  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
+			  <div class="mt-auto">
+			    <h3 class="card-text" >Sub Name</h3>
+			    <p class="card-text-bottom " >Content ...</p>
+			    </div>
+			  </div>
+			</div>
+			</div>
+			
 		</div>
 	
 		<br>
@@ -118,6 +167,8 @@
 				<%@include file="subList.jsp"%>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>

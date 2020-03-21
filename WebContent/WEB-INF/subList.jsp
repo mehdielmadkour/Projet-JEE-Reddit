@@ -4,7 +4,7 @@
 
 
 <div class="card">
-	<div class="card-header">
+	<div class="card-header" style="background-color: #0079d3;color: white;">
     	<h5>Up-and-coming Communities</h5>
   	</div>
   	

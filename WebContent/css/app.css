@@ -31,3 +31,17 @@ a.navbar-brand {
 	margin: auto;
 	margin-top: 20px;
 }
+
+.bg-all{
+	background-color: #dae0e6;
+}
+
+.contain{
+	width: 80%;
+	margin: auto;
+}
+
+.card-img{
+	filter: brightness(50%);
+	-webkit-filter: brightness(50%);
+}
