@@ -37,7 +37,7 @@
 		<div class="input-group-prepend">
 		   <label class="input-group-text" for="inputGroupSelect01">Sub Reddit:</label>
 		</div>
-		<input type="text" name="subName"/>
+		<input type="text" class="form-control" name="subName"/>
 		</div>
 		<input type="submit" class="btn btn-outline-primary" value="newSub" class="button">
 	</form>
