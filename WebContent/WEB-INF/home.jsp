@@ -47,7 +47,7 @@
     	Création d'un post
   		</div>
 		<div class="card-body">
-			<form action="Home" method="post" enctype="multipart/form-data">
+			<form action="newPost" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="newPost"/>
 				
 				<div class="input-group mb-3">
