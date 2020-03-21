@@ -119,7 +119,7 @@ public class Home extends HttpServlet {
 		
 		/** file input logic **/
 		
-		
+		if ("newPost".equals(this.action)) {
 		Part part = request.getPart( Champ_Fichier );
 		String nomFichier = getNomFichier ( part );
 		
@@ -131,8 +131,8 @@ public class Home extends HttpServlet {
 			ecrireFichier (part, nomFichier, CHEMIN);
 			
 			request.setAttribute(nomChamp, nomFichier);
+			}
 		}
-		
 		
 		
 		/** End file inpu logic **/

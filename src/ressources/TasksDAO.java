@@ -24,8 +24,9 @@ public class TasksDAO {
 	}
 	
 	public List<Post> getPosts(String subName) {
-		return em.createQuery( "SELECT p FROM posts p WHERE p.subName=" + subName, Post.class).getResultList();
+		return em.createQuery( "SELECT p FROM Post p WHERE p.subName=\"" + subName + "\"", Post.class).getResultList();
 	}
+	
 	
 	public void newComment(Comment comment) {
 		em.persist(comment);

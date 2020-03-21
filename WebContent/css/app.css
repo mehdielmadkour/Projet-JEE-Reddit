@@ -10,3 +10,23 @@ a.navbar-brand {
 	width: 80%;
 }
 
+.button-transparent {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
+}
+
+.button-width{
+	width: 20%;
+}
+
+.text-width{
+	width: 100%;
+	height: 20%;
+}
+
+.card{
+	margin: auto;
+}

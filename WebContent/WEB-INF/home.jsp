@@ -19,24 +19,59 @@
 	  	</form>
 	</nav>
 
-	<form action="Home" method="post">
+	<form action="Home" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="newSub"/>
 		<input type="text" name="subName" placeholder="nom du sub"/>
 		<input type="submit" value="New Sub" class="button">
 	</form>
 	
-	<div class="card">
+	<div class="card" style="width: 40rem;">
+		<div class="card-header">
+    	Création d'un post
+  		</div>
 		<div class="card-body">
 			<form action="Home" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="newPost"/>
-				<input type="text" name="subName" placeholder="nom du sub"/>
+				
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect01">Nom du sub Reddit:</label>
+				  </div>
+				  <div class="button-width">
+				  <select class="custom-select" id="inputGroupSelect01" name="subName">
+				  	<c:forEach var="Sub" items="${subList}">
+				    <option value="${Sub.getName()}"><c:out value="${Sub.getName()}"/></option> 
+				    </c:forEach>
+				  </select>
+				  </div>
+				</div>
+				
+				
 				<input type="hidden" name="user" value="Thibaut"/>
-				<input type="text" name="postContent" placeholder="contenu du sub"/>
-				<input type="file" id="fichier" name="fichier" />
-				<input type="submit" value="New Post" class="button">
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect01">Contenu du sub Reddit:</label>
+				  </div>
+				  <div class="text-width">
+				<textarea class="form-control" name="postContent"></textarea>
+				</div>
+				</div>
+				<div class="input-group mb-3" style="width:60%;">
+				<div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroupFileAddon01">Image:</span>
+				  </div>
+				  <div class="custom-file" >
+				    <input type="file" class="custom-file-input" id="inputGroupFile02" name="fichier">
+				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Parcourir...</label>
+				  </div>
+				</div>
+				
+				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
 				
 			</form>
+			
 		</div>
+		<div class="card-footer"></div>
 	</div>
 	<div class="container">
 	
@@ -52,7 +87,9 @@
 			<div class="col-8">
 				<p>Popular posts</p>
 				<c:forEach var="Post" items="${posts}">
+				
 					<%@include file="post.jsp"%>
+				
 				</c:forEach>
 			</div>
 			

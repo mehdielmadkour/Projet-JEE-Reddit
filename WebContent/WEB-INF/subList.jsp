@@ -11,7 +11,14 @@
 	<div class="card-body">
 		<c:forEach var="Sub" items="${subList}">
 			<div class="row">
-				<c:out value="${compteur}"/> <c:out value="${Sub.getName()}"/>
+			<form action="SubReddit">
+			<input type="hidden" name="subName" value="${Sub.getName()}"/>
+			<button class="button-transparent" type="submit">
+			<c:out value="${compteur}"/> <c:out value="${Sub.getName()}"/>
+			</button>
+			
+			</form>
+				
 			</div>
 		</c:forEach>
 	</div>
