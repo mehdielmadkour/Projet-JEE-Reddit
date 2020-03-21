@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,17 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ressources.SubReddit;
 import ressources.TasksDAO;
 
 /**
- * Servlet implementation class SubReddit
+ * Servlet implementation class newSub
  */
-@WebServlet("/SubReddit")
-public class SubReddit extends HttpServlet {
+@WebServlet("/newSub")
+public class newSub extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	private String subName;
-	
+
+	private String subName = null;
 	
 	@EJB
 	private TasksDAO tasksDAO;
@@ -28,7 +27,7 @@ public class SubReddit extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubReddit() {
+    public newSub() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,33 +36,24 @@ public class SubReddit extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		String url = "/WEB-INF/subReddit.jsp";
-		
+
 		if (this.subName != null) {
-			List<ressources.Post> Posts = tasksDAO.getPosts(this.subName);
-			request.setAttribute("posts", Posts);
+			SubReddit sub = new SubReddit();
+			sub.setName(this.subName);
+			tasksDAO.newSub(sub);
 		}
-		
-		List<ressources.SubReddit> subList = tasksDAO.getSubs(5);
-		request.setAttribute("subList", subList);
-		
-		
-		getServletContext()
-		.getRequestDispatcher(url).
-		forward(request, response);
+
+		response.sendRedirect("Home");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		if (request.getParameter("subName") != null) this.subName = request.getParameter("subName");
 		
-		
-		response.sendRedirect("SubReddit");
+		doGet(request, response);
 	}
 
 }

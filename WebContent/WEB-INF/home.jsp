@@ -32,15 +32,14 @@
   	
   	
   	<div class="card-body">
-	<form action="Home" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="action" value="newSub"/>
+	<form action="newSub" method="post">
 		<div class="input-group mb-3">
 		<div class="input-group-prepend">
 		   <label class="input-group-text" for="inputGroupSelect01">Sub Reddit:</label>
 		</div>
-		<input type="text" class="form-control" name="subName"/>
+		<input type="text" name="subName"/>
 		</div>
-		<input type="submit" class="btn btn-outline-primary" value="New Sub" class="button">
+		<input type="submit" class="btn btn-outline-primary" value="newSub" class="button">
 	</form>
 	</div>
 	<div class="card-footer"></div>
@@ -54,7 +53,6 @@
   		</div>
 		<div class="card-body">
 			<form action="newPost" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="action" value="newPost"/>
 				
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
@@ -90,7 +88,7 @@
 				  <br>
 				</div>
 				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
-
+				
 			</form>
 			
 		</div>
