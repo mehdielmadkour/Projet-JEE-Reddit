@@ -26,15 +26,14 @@
     	Création d'un sub
   	</div>
   	<div class="card-body">
-	<form action="Home" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="action" value="newSub"/>
+	<form action="newSub" method="post">
 		<div class="input-group mb-3">
 		<div class="input-group-prepend">
 		   <label class="input-group-text" for="inputGroupSelect01">Sub Reddit:</label>
 		</div>
-		<input type="text" class="form-control" name="subName"/>
+		<input type="text" name="subName"/>
 		</div>
-		<input type="submit" class="btn btn-outline-primary" value="New Sub" class="button">
+		<input type="submit" class="btn btn-outline-primary" value="newSub" class="button">
 	</form>
 	</div>
 	<div class="card-footer"></div>
@@ -82,26 +81,9 @@
 				  </div>
 				  <br>
 				</div>
-<<<<<<< HEAD
 				<input type="file" class="custom-file-input" id="fichier" name="fichier">
 				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
 				
-||||||| merged common ancestors
-<<<<<<< HEAD
-				
-				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
-||||||| f152f15
-				
-				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
-=======
-				<input type="file" class="custom-file-input" id="fichier" name="fichier">
-				<input type="submit" class="btn btn-outline-info" value="New Post" class="button">
->>>>>>> ce537a633f0ff1fafdea1d2f9916ba88d9fe6cc1
-				
-=======
-				<input type="submit" class="btn btn-outline-primary" value="New Post" class="button">
-
->>>>>>> 170c27d13ddf35c4966fd84d94710a834fd5d90e
 			</form>
 			
 		</div>

@@ -31,16 +31,9 @@ import ressources.TasksDAO;
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private String subName;
-	private String postContent;
 	private String action = null;
 	private int idPost;
 	private String comment;
-	private String url;
-
-	private final String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\Projet-JEE-Reddit\\img\\";
-	private final int TAILLE_TAMPON = 10240;
-
 	
 	@EJB
 	private TasksDAO tasksDAO;
@@ -61,13 +54,6 @@ public class Home extends HttpServlet {
 
 		String url = "/WEB-INF/home.jsp";
 		
-		if ("newSub".equals(action)) {
-
-			SubReddit sub = new SubReddit();
-			sub.setName(this.subName);
-			tasksDAO.newSub(sub);
-			this.action = null;
-		}
 		
 		if ("addComment".equals(action)) {
 
@@ -96,8 +82,6 @@ public class Home extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (request.getParameter("action") != null) this.action = request.getParameter("action");
-		if (request.getParameter("subName") != null) this.subName = request.getParameter("subName");
-		if (request.getParameter("postContent") != null) this.postContent = request.getParameter("postContent");
 		if (request.getParameter("idPost") != null) this.idPost = Integer.valueOf(request.getParameter("idPost"));
 		if (request.getParameter("comment") != null) this.comment = request.getParameter("comment");
 		
