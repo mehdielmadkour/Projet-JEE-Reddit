@@ -46,6 +46,9 @@ public class SubReddit extends HttpServlet {
 			request.setAttribute("posts", Posts);
 		}
 		
+		List<ressources.SubReddit> subList = tasksDAO.getSubs(5);
+		request.setAttribute("subList", subList);
+		
 		
 		getServletContext()
 		.getRequestDispatcher(url).
