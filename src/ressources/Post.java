@@ -77,8 +77,12 @@ public class Post {
 		return vote;
 	}
 
-	public void setVote(int vote) {
-		this.vote = vote;
+	public void upVote() {
+		this.vote++;
+	}
+	
+	public void downVote() {
+		this.vote--;
 	}
 	
 	public Timestamp getTime() {
