@@ -59,4 +59,8 @@ public class TasksDAO {
 	public void updatePost(Post post) {
 		em.merge(post);
 	}
+	
+	public Post getPost(int postId) {
+		return em.find(Post.class, postId);
+	}
 }
