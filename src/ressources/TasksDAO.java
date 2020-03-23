@@ -55,4 +55,8 @@ public class TasksDAO {
 		if (list.size() < listSize) return list;
 		else return list.subList(0, listSize);
 	}
+	
+	public void updatePost(Post post) {
+		em.merge(post);
+	}
 }
