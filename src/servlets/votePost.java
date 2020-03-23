@@ -53,6 +53,8 @@ public class votePost extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		System.out.println(request.getParameter("idPost"));
+		System.out.println(request.getParameter("vote"));
 		if (request.getParameter("idPost") != null) this.idPost = Integer.valueOf(request.getParameter("idPost"));
 		if (request.getParameter("vote") != null) this.vote = Integer.valueOf(request.getParameter("vote"));
 		

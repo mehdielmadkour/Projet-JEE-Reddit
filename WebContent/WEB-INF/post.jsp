@@ -30,6 +30,18 @@
 
     <a href="" class="card-link">share</a>
     
+    <form action="votePost" method="post">
+    	<input type="hidden" name="idPost" value="<c:out value = "${Post.getId()}"></c:out>"/>
+    	<input type="hidden" name="vote" value="1"/>
+    	<button class="btn" type="submit">UpVote</button>
+    </form>
+    
+    <form action="votePost" method="post">
+    	<input type="hidden" name="idPost" value="<c:out value = "${Post.getId()}"></c:out>"/>
+    	<input type="hidden" name="vote" value="-1"/>
+    	<button class="btn" type="submit">DownVote</button>
+    </form>
+    
   </div>
 </div>
 
