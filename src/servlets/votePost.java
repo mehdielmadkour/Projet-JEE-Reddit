@@ -38,8 +38,14 @@ public class votePost extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		if (this.idPost != 0 && this.vote != 0) {
+			ressources.Post post = this.tasksDAO.getPost(this.idPost);
+			if (this.vote == 1) post.upVote();
+			else if (this.vote == -1) post.downVote();
 			
+			this.tasksDAO.updatePost(post);
 		}
+
+		response.sendRedirect("Home");
 	}
 
 	/**
