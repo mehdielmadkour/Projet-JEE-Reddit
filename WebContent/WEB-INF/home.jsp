@@ -151,8 +151,8 @@
 		
 		<div class="row">
 			<div class="col-8">
-				<p>Popular posts</p>
-				<c:forEach var="Post" items="${posts}">
+				<p>Recent posts</p>
+				<c:forEach var="Post" items="${recentPosts}">
 				
 					<%@include file="post.jsp"%>
 				

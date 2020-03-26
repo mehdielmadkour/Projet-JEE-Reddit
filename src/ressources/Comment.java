@@ -69,6 +69,5 @@ public class Comment implements Serializable {
 	public void setPostId(int postId) {
 		this.postId = postId;
 	}
-
 	
 }

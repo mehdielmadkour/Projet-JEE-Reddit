@@ -64,6 +64,9 @@ public class Home extends HttpServlet {
 		List<ressources.Post> votedPosts = tasksDAO.getMostVotedPosts(10);
 		request.setAttribute("posts", votedPosts);
 		
+		List<ressources.Post> recentPosts = tasksDAO.getRecentPosts(10);
+		request.setAttribute("recentPosts", recentPosts);
+		
 		getServletContext()
 		.getRequestDispatcher(url).
 		forward(request, response);

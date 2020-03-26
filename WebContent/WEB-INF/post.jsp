@@ -15,7 +15,7 @@
 	<a href="Post" class="card-link">
 		<c:out value = "${Post.getSubName()}   "></c:out>
     	<c:out value = "Posted by ${Post.getUser()}"></c:out>
-    	<c:out value = "${Post.getTime()}"></c:out>
+    	
 	</a>
     	
   	</div>
