@@ -2,6 +2,7 @@ package ressources;
 
 import java.io.Serializable;
 import java.security.Timestamp;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "posts")
@@ -35,9 +38,6 @@ public class Post implements Serializable{
 
 	@Column(name = "votes")
 	private int vote;
-	
-	@Column(name = "time")
-	private Timestamp time;
 	
 	@Column(name = "content")
 	private String content;
@@ -93,14 +93,6 @@ public class Post implements Serializable{
 	
 	public void downVote() {
 		this.vote--;
-	}
-	
-	public Timestamp getTime() {
-		return time;
-	}
-
-	public void setTime(Timestamp time) {
-		this.time = time;
 	}
 
 	public String getContent() {

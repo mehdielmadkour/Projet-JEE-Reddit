@@ -15,16 +15,17 @@
 	<a href="Post" class="card-link">
 		<c:out value = "${Post.getSubName()}   "></c:out>
     	<c:out value = "Posted by ${Post.getUser()}"></c:out>
-    	<c:out value = "${Post.getTime()}"></c:out>
+    	
 	</a>
     	
   	</div>
 	
   <div class="card-body">
     <h5 class="card-title"><c:out value = "${Post.getContent()}"></c:out></h5>
-    <p> <img src="${Post.getUrl()}" class="card-img-top" alt="quokka">
-          </p>
-
+    <c:if test="${Post.getUrl()} != null">
+    	<p><img src="${Post.getUrl()}" class="card-img-top" alt="quokka"></p>
+    </c:if>
+    	
 
     <a href="" data-toggle="modal" data-target="#exampleModal" class="card-link"><c:out value = " commentaire"></c:out></a>
 
