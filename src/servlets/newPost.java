@@ -30,7 +30,6 @@ public class newPost extends HttpServlet {
 	private String postContent;
 	private Part part;
 	
-	private final String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\Projet-JEE-Reddit\\img\\";
 	private final int TAILLE_TAMPON = 10240;
 	
 	@EJB
@@ -48,7 +47,8 @@ public class newPost extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\" + request.getContextPath().substring(1, request.getContextPath().length()) + "\\img\\";
 
 		SubReddit sub = tasksDAO.getSubRedditByName(this.subName);
 		ressources.Post post = new ressources.Post();
