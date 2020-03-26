@@ -30,7 +30,7 @@ public class newPost extends HttpServlet {
 	private String postContent;
 	private Part part;
 	
-	private final String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\Projet-JEE-Reddit\\img\\";
+	private final String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\Reddit_Project\\img\\";
 	private final int TAILLE_TAMPON = 10240;
 	
 	@EJB
@@ -89,7 +89,7 @@ public class newPost extends HttpServlet {
 		if (request.getParameter("postContent") != null) this.postContent = request.getParameter("postContent");
 		if (request.getPart("fichier") != null) this.part = request.getPart("fichier");
 		
-		doGet(request, response);
+		response.sendRedirect("newPost");
 	}
 	
 	private void ecrireFichier( Part part, String nomFichier, String chemin ) throws IOException {
