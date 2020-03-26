@@ -1,8 +1,7 @@
 # Projet-JEE-Reddit
 
 A faire :  
-- Affichage des commentaires  
-- Vote des posts  
+- Affichage des commentaires 
 - Ajout d'un commentaire  (oneToMany - ManyToOne)
 
 Fait :
@@ -13,4 +12,5 @@ Fait :
 - Servlet Home 
 - Ajout d'un sub  
 - Binding des variables sur le post  
-- Gérer la persistence des posts
+- Gérer la persistence des posts 
+- Vote des posts  
