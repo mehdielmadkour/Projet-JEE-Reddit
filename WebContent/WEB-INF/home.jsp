@@ -27,7 +27,7 @@
 	<div class="col-sm-4">
 	<div class="card" style="width: 100%;height: 50%">
 	<div class="card-header">
-    	Création d'un sub
+    	Sub creation
   	</div>
   	
   	
@@ -39,7 +39,7 @@
 		</div>
 		<input type="text" class="form-control" name="subName"/>
 		</div>
-		<input type="submit" class="btn btn-outline-primary" value="newSub" class="button">
+		<input type="submit" class="btn btn-outline-primary" value="new Sub" class="button">
 	</form>
 	</div>
 	<div class="card-footer"></div>
@@ -49,14 +49,14 @@
 	<div class="col-sm-8">
 	<div class="card" style="width: 100%; height: 92%">
 		<div class="card-header">
-    	Création d'un post
+    	Post creation
   		</div>
 		<div class="card-body">
 			<form action="newPost" method="post" enctype="multipart/form-data">
 				
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
-				    <label class="input-group-text" for="inputGroupSelect01">Nom du sub Reddit:</label>
+				    <label class="input-group-text" for="inputGroupSelect01">Sub name::</label>
 				  </div>
 				  <div class="button-width">
 				  <select class="custom-select" id="inputGroupSelect01" name="subName">
@@ -71,7 +71,7 @@
 				<input type="hidden" name="user" value="Thibaut"/>
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
-				    <label class="input-group-text" for="inputGroupSelect01">Contenu du sub Reddit:</label>
+				    <label class="input-group-text" for="inputGroupSelect01">Sub content:</label>
 				  </div>
 				  <div class="text-width">
 				<textarea class="form-control" name="postContent"></textarea>
@@ -83,7 +83,7 @@
 				  </div>
 				  <div class="custom-file" >
 				    <input type="file" class="custom-file-input" id="fichier" name="fichier">
-				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Parcourir...</label>
+				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Search...</label>
 				  </div>
 				  <br>
 				</div>

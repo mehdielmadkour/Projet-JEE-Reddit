@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="col mb-3">
-	<div class="card bg-dark text-white" style="width: 200px; height:250px;">
+	<div class="card bg-dark text-white" style="width: 230px; height:250px;">
 	  <img src="${trandingPost.getUrl()}" class="card-img" style="width: 100%; height: 100%" alt="...">
 	  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
 	  <div class="mt-auto">
