@@ -45,7 +45,8 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		String contextPath = request.getContextPath();
+        System.out.println(contextPath);
 		String url = "/WEB-INF/home.jsp";
 		
 		
