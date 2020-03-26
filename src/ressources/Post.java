@@ -2,12 +2,16 @@ package ressources;
 
 import java.security.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -37,6 +41,13 @@ public class Post {
 	@Column(name = "content")
 	private String content;
 	
+
+	@OneToMany(
+        cascade = CascadeType.ALL,
+        orphanRemoval = true,
+        fetch = FetchType.EAGER
+    )
+	private List<Comment> comments = new ArrayList<>();
 	
 	public String getSubName() {
 		return subName;
@@ -62,16 +73,13 @@ public class Post {
 		this.user = user;
 	}
 
-
-	
-
-	/*public ArrayList<Comment> getComments() {
+	public List<Comment> getComments() {
 		return comments;
 	}
 
-	public void setComments(ArrayList<Comment> comments) {
-		this.comments = comments;
-	}*/
+	public void addComments(Comment comment) {
+		this.comments.add(comment);
+	}
 
 	public int getVote() {
 		return vote;

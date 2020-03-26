@@ -6,6 +6,7 @@
    <jta-data-source>Database</jta-data-source>
     <class>classes Entity</class>
     <properties>
+    	<property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
         <property name="openjpa.jdbc.DBDictionary" value="mysql" />
         <property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO" />
         <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>

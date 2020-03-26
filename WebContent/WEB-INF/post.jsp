@@ -51,7 +51,7 @@
   
     <div class="modal-content">
    
-    <form action = "Home" method = "post">
+    <form action = "newComment" method = "post">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ajouter un commentaire</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -62,7 +62,6 @@
       <div class="modal-body">
         <textarea class="form-control" name="comment" ><c:out value = "id: ${Post.getId()}"></c:out></textarea>
         <input type="hidden" name="idPost" value="${Post.getId()}">
-        <input type="hidden" name="action" value="addComment">
       </div>
 
       <div class="modal-footer">

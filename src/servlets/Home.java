@@ -1,11 +1,5 @@
 package servlets;
 
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.util.List;
@@ -58,7 +52,6 @@ public class Home extends HttpServlet {
 		if ("addComment".equals(action)) {
 
 			ressources.Comment commentaire = new ressources.Comment();
-			commentaire.setIdPost(this.idPost);
 			commentaire.setContent(this.comment);
 			tasksDAO.newComment(commentaire);
 			this.action = null;

@@ -1,12 +1,15 @@
 package ressources;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,14 +24,8 @@ public class Comment {
 	@Column(name = "user")
 	private User user;
 	
-	@Column(name = "idPost")
-	private int idPost;
-	
 	@Column(name = "likes")
 	private int like;
-	
-	@Column(name = "response")
-	private ArrayList<Comment> comments;
 	
 	@Column(name = "content")
 	private String content;
@@ -39,14 +36,6 @@ public class Comment {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-	
-	public int getIdPost() {
-		return this.idPost;
-	}
-
-	public void setIdPost(int idPost) {
-		this.idPost = idPost;
 	}
 
 	public User getUser() {
@@ -63,14 +52,6 @@ public class Comment {
 
 	public void setLike(int like) {
 		this.like = like;
-	}
-
-	public ArrayList<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(ArrayList<Comment> comments) {
-		this.comments = comments;
 	}
 
 	public String getContent() {
