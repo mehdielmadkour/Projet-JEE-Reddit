@@ -89,7 +89,7 @@ public class newPost extends HttpServlet {
 		if (request.getParameter("postContent") != null) this.postContent = request.getParameter("postContent");
 		if (request.getPart("fichier") != null) this.part = request.getPart("fichier");
 		
-		doGet(request, response);
+		response.sendRedirect("newPost");
 	}
 	
 	private void ecrireFichier( Part part, String nomFichier, String chemin ) throws IOException {

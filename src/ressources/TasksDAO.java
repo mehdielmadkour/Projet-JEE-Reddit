@@ -41,7 +41,7 @@ public class TasksDAO {
 	}
 	
 	public List<Post> getMostVotedPosts(int listSize) {
-		
+
 		List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
 
 		if (list.size() < listSize) return list;

@@ -53,7 +53,7 @@ public class newSub extends HttpServlet {
 
 		if (request.getParameter("subName") != null) this.subName = request.getParameter("subName");
 		
-		doGet(request, response);
+		response.sendRedirect("newSub");
 	}
 
 }

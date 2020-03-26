@@ -9,6 +9,20 @@
 <title>subReddit</title>
 </head>
 <body>
+
+	<nav class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="/Projet-JEE-Reddit/Home"><img src="img/logo_reddit_2.png" class="logo"></a>
+		<form class="form-inline mx-auto"style="width: 60%">
+	    	<input class="form-control search-bar" style="width: 100%" type="search" placeholder="Search" aria-label="Search">
+	  	</form>
+		<form class="form-inline">
+	    	<button class="btn btn-outline-success mr-2 my-sm-0" type="submit">LOG IN</button>
+	  	</form>
+		<form class="form-inline">
+	    	<button class="btn btn-outline-success mr-1 my-sm-0" type="submit">SIGN UP</button>
+	  	</form>
+	</nav>
+
 <div class="container">
 	
 		

@@ -102,6 +102,26 @@
 		<p>Trending today</p>
 		<div class="row">
 		
+		
+		
+				<c:forEach var="trandingPost" items="${trandingPosts}">
+				
+					<%@include file="trandingPost.jsp"%>
+				
+				</c:forEach>
+		
+		<!--  
+			<div class="col mb-3">
+			<div class="card bg-dark text-white" >
+			  <img src="img\\quokka.jpg" class="card-img" alt="...">
+			  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
+			  <div class="mt-auto">
+			    <h3 class="card-text" >Sub Name</h3>
+			    <p class="card-text-bottom " >Content ...</p>
+			    </div>
+			  </div>
+			</div>
+			</div>
 			<div class="col mb-3">
 			<div class="card bg-dark text-white" >
 			  <img src="img\\quokka.jpg" class="card-img" alt="...">
@@ -122,16 +142,6 @@
 			    </div>
 			  </div>
 			</div>
-			</div><div class="col mb-3">
-			<div class="card bg-dark text-white" >
-			  <img src="img\\quokka.jpg" class="card-img" alt="...">
-			  <div class="card-img-overlay d-flex flex-column" style="vertical-align: bottom;" >
-			  <div class="mt-auto">
-			    <h3 class="card-text" >Sub Name</h3>
-			    <p class="card-text-bottom " >Content ...</p>
-			    </div>
-			  </div>
-			</div>
 			</div>
 			<div class="col mb-3">
 			<div class="card bg-dark text-white" >
@@ -144,7 +154,7 @@
 			  </div>
 			</div>
 			</div>
-			
+			-->
 		</div>
 	
 		<br>
