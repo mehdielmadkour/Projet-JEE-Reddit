@@ -1,5 +1,6 @@
 package ressources;
 
+import java.io.Serializable;
 import java.security.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "posts")
-public class Post {
+public class Post implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,12 +43,13 @@ public class Post {
 	private String content;
 	
 
-	@OneToMany(
+	/*@OneToMany(
         cascade = CascadeType.ALL,
         orphanRemoval = true,
-        fetch = FetchType.EAGER
+        fetch = FetchType.LAZY
     )
-	private List<Comment> comments = new ArrayList<>();
+	private List<Comment> comments = new ArrayList<>();*/
+	
 	
 	public String getSubName() {
 		return subName;
@@ -73,13 +75,13 @@ public class Post {
 		this.user = user;
 	}
 
-	public List<Comment> getComments() {
+	/*public List<Comment> getComments() {
 		return comments;
 	}
 
 	public void addComments(Comment comment) {
 		this.comments.add(comment);
-	}
+	}*/
 
 	public int getVote() {
 		return vote;

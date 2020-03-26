@@ -41,11 +41,24 @@ public class TasksDAO {
 	}
 	
 	public List<Post> getMostVotedPosts(int listSize) {
+		/*
+		List<Integer> listId = em.createQuery( "SELECT p.id FROM Post p ORDER BY p.vote DESC", Integer.class).getResultList();
+		for (int id : listId) {
+			Post post = getPost(id);
+		}*/
 		
-		List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
-		
+		//List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
+		List<Post> list = em.createQuery( "SELECT p FROM Post p", Post.class).getResultList();
+		getPostComments(list.get(0).getId());
 		if (list.size() < listSize) return list;
 		else return list.subList(0, listSize);
+		
+	}
+	
+	public List<Comment> getPostComments(int postId){
+		
+		List<Comment> list = em.createQuery( "SELECT c FROM Comment c WHERE c.postId=:postId", Comment.class).setParameter("postId", postId).getResultList();
+		return list;
 	}
 	
 	public List<SubReddit> getSubs(int listSize) {

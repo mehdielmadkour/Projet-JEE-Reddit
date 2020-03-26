@@ -1,5 +1,6 @@
 package ressources;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "comments")
-public class Comment {
+public class Comment implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +30,9 @@ public class Comment {
 	
 	@Column(name = "content")
 	private String content;
+	
+	@Column(name = "postId")
+	private int postId;
 
 	public int getId() {
 		return id;
@@ -60,6 +64,10 @@ public class Comment {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+	
+	public void setPostId(int postId) {
+		this.postId = postId;
 	}
 
 	

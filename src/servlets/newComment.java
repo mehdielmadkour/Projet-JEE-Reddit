@@ -40,10 +40,12 @@ public class newComment extends HttpServlet {
 
 		Comment comment = new Comment();
 		comment.setContent(this.commentContent);
+		comment.setPostId(this.idPost);
+		//ressources.Post post = this.tasksDAO.getPost(this.idPost);
+		//post.addComments(comment);
 		
-		ressources.Post post = this.tasksDAO.getPost(this.idPost);
-		post.addComments(comment);
-		tasksDAO.updatePost(post);
+		//tasksDAO.updatePost(post);
+		tasksDAO.newComment(comment);
 
 		response.sendRedirect("Home");
 	}

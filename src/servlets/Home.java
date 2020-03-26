@@ -57,17 +57,16 @@ public class Home extends HttpServlet {
 			this.action = null;
 		}
 		
+
+		List<ressources.SubReddit> subList = tasksDAO.getSubs(5);
+		request.setAttribute("subList", subList);
 		
 		List<ressources.Post> votedPosts = tasksDAO.getMostVotedPosts(10);
-		List<ressources.SubReddit> subList = tasksDAO.getSubs(5);
-		
 		request.setAttribute("posts", votedPosts);
-		request.setAttribute("subList", subList);
 		
 		getServletContext()
 		.getRequestDispatcher(url).
 		forward(request, response);
-		
 	}
 
 	/**

@@ -4,9 +4,13 @@
  <persistence-unit name="RedditPU" transaction-type="JTA">
 <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
    <jta-data-source>Database</jta-data-source>
-    <class>classes Entity</class>
+    <class>ressources.Post</class>
+    <class>ressources.Comment</class>
+    <class>ressources.SubReddit</class>
+    <class>ressources.User</class>
     <properties>
-    	<property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+    	<property name="openjpa.DynamicEnhancementAgent" value="false"/>
+		<property name="openjpa.RuntimeUnenhancedClasses" value="supported" />
         <property name="openjpa.jdbc.DBDictionary" value="mysql" />
         <property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO" />
         <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
