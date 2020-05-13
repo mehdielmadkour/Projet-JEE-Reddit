@@ -18,6 +18,12 @@ public class TasksDAO {
 		em.persist(user);
 	}
 	
+	public boolean UserExist(String name, String password) {
+		return em.createQuery( "SELECT u FROM User u WHERE u.name=\"" + name + "\" AND u.password=\"" + password +"\"", User.class).getResultList().isEmpty();
+	
+		
+	}
+	
 	public void newPost(Post post, SubReddit sub) {
 		em.persist(post);
 		em.merge(sub);
@@ -41,54 +47,14 @@ public class TasksDAO {
 	}
 	
 	public List<Post> getMostVotedPosts(int listSize) {
-<<<<<<< HEAD
-
 		/*
 		 Fonction qui retourne les 4 (ou moins) posts les plus votés
 		*/
 
-		/*
-		List<Integer> listId = em.createQuery( "SELECT p.id FROM Post p ORDER BY p.vote DESC", Integer.class).getResultList();
-		for (int id : listId) {
-			Post post = getPost(id);
-		}*/
-
 		List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
 		if (list.size() < 4) return list;
 		else return list.subList(0, 4);
-||||||| 33c6143
-<<<<<<< HEAD
-		/*
-		 Fonction qui retourne les 4 (ou moins) posts les plus votés
-		*/
-||||||| ba21023
-		/*
-		List<Integer> listId = em.createQuery( "SELECT p.id FROM Post p ORDER BY p.vote DESC", Integer.class).getResultList();
-		for (int id : listId) {
-			Post post = getPost(id);
-		}*/
-=======
->>>>>>> 526e69c2c12e91d601f56ea8edf85f3d285ba749
-		
-<<<<<<< HEAD
-		List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
-		if (list.size() < 4) return list;
-		else return list.subList(0, 4);
-||||||| ba21023
-		//List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
-		List<Post> list = em.createQuery( "SELECT p FROM Post p", Post.class).getResultList();
-		getPostComments(list.get(0).getId());
-		if (list.size() < listSize) return list;
-		else return list.subList(0, listSize);
-=======
-		List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
-=======
-
-		List<Post> list = em.createQuery( "SELECT p FROM Post p ORDER BY p.vote DESC", Post.class).getResultList();
->>>>>>> 9e331855e1675ba7ede2c96e104241bde27b28f1
-
-		
-		
+	
 	}
 	
 	public List<Post> getRecentPosts(int listSize) {
@@ -97,13 +63,7 @@ public class TasksDAO {
 
 		if (list.size() < listSize) return list;
 		else return list.subList(0, listSize);
-<<<<<<< HEAD
-
-||||||| 33c6143
->>>>>>> 526e69c2c12e91d601f56ea8edf85f3d285ba749
-=======
->>>>>>> 9e331855e1675ba7ede2c96e104241bde27b28f1
-		
+	
 	}
 	
 	public List<Comment> getPostComments(int postId){
