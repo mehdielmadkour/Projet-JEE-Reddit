@@ -28,7 +28,7 @@ public class Post implements Serializable{
 	private int id;
 	
 	@Column(name = "user")
-	private User user;
+	private String user;
 	
 	@Column(name = "url")
 	private String url;
@@ -67,11 +67,11 @@ public class Post implements Serializable{
 		this.url = url;
 	}
 
-	public User getUser() {
+	public String getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 

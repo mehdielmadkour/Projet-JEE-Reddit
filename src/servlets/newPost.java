@@ -29,6 +29,7 @@ public class newPost extends HttpServlet {
 	private String subName;
 	private String postContent;
 	private Part part;
+	private String user;
 	
 	private final int TAILLE_TAMPON = 10240;
 	
@@ -72,6 +73,7 @@ public class newPost extends HttpServlet {
 		if (this.postContent != null || this.subName == null) {
 			post.setContent(this.postContent);
 			post.setSubName(this.subName);
+			post.setUser(this.user);
 			tasksDAO.newPost(post, sub);
 		}
 		
@@ -88,6 +90,8 @@ public class newPost extends HttpServlet {
 		if (request.getParameter("subName") != null) this.subName = request.getParameter("subName");
 		if (request.getParameter("postContent") != null) this.postContent = request.getParameter("postContent");
 		if (request.getPart("fichier") != null) this.part = request.getPart("fichier");
+		if (request.getParameter("user") != null) this.user = request.getParameter("user");
+		
 		
 		response.sendRedirect("newPost");
 	}

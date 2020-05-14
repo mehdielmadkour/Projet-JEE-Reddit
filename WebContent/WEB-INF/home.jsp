@@ -11,12 +11,26 @@
 		<form class="form-inline mx-auto"style="width: 60%">
 	    	<input class="form-control search-bar" style="width: 100%" type="search" placeholder="Search" aria-label="Search">
 	  	</form>
+	  	
+	  	<c:if test="${!empty sessionScope.name}"> 
+		
+		<form class="form-inline" action="Userhome" >
+	    	<button class="btn btn-outline-success mr-2 my-sm-0" type="submit">Create new Sub/Post</button>
+	  	</form>
+	  	<form class="form-inline" action="Logout" >
+	    	<button class="btn btn-outline-success mr-1 my-sm-0" type="submit">LOGOUT</button>
+	  	</form>
+	  	${sessionScope.name} connected
+	  	</c:if>
+	  	
+	  	<c:if test="${empty sessionScope.name}"> 
 		<form class="form-inline" action="Login">
 	    	<button class="btn btn-outline-success mr-2 my-sm-0" type="submit">LOG IN</button>
 	  	</form>
 		<form class="form-inline" action="SignIn" >
 	    	<button class="btn btn-outline-success mr-1 my-sm-0" type="submit">SIGN UP</button>
 	  	</form>
+	  	</c:if>
 	</nav>
 	
 	

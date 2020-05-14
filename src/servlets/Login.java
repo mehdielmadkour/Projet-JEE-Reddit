@@ -64,6 +64,7 @@ public class Login extends HttpServlet {
 		
 		if(tasksDAO.UserExist(name, pass) == false){
 			HttpSession session = request.getSession();
+			
 			session.setAttribute("name", name);
 
 			

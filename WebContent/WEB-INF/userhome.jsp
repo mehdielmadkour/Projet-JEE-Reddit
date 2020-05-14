@@ -20,6 +20,9 @@
 	  	<form class="form-inline" action="Logout" >
 	    	<button class="btn btn-outline-success mr-1 my-sm-0" type="submit">LOGOUT</button>
 	  	</form>
+	  	<c:if test="${!empty sessionScope.name}"> 
+		${ sessionScope.name } connected
+		</c:if>
 	</nav>
 
 <div class="bg-all"> 
@@ -29,7 +32,10 @@
 	<div class="col-sm-4">
 	<br>Connection Successful
 	<br>
-	<h4>Welcome</h4>
+	<h4>Welcome <c:if test="${!empty sessionScope.name}"> 
+	${ sessionScope.name }
+	</c:if></h4>
+	
 	<br>
 	<div class="card" style="width: 100%;height: 50%">
 	<div class="card-header">
@@ -75,7 +81,7 @@
 				</div>
 				
 				
-				<input type="hidden" name="user" value="Thibaut"/>
+				<input type="hidden" name="user" value="${sessionScope.name}"/>
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <label class="input-group-text" for="inputGroupSelect01">Sub content:</label>
