@@ -49,8 +49,8 @@ public class newPost extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\" + request.getContextPath().substring(1, request.getContextPath().length()) + "\\img\\";
-		String CHEMIN = "C:\\Users\\Titi\\eclipse-workspace\\Reddit_project\\WebContent\\img\\";
+		String CHEMIN = System.getProperty( "catalina.base" ) + "\\wtpwebapps\\" + request.getContextPath().substring(1, request.getContextPath().length()) + "\\img\\";
+		//String CHEMIN = "C:\\Users\\Titi\\eclipse-workspace\\Reddit_project\\WebContent\\img\\";
 		SubReddit sub = tasksDAO.getSubRedditByName(this.subName);
 		ressources.Post post = new ressources.Post();
 		
