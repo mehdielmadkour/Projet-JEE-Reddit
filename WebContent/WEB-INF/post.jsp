@@ -27,7 +27,7 @@
     </c:if>
     	
 
-    <a href="" data-toggle="modal" data-target="#exampleModal" class="card-link"><c:out value = " commentaire"></c:out></a>
+    <a href="" data-toggle="modal" data-target="#exampleModal" class="card-link"><c:out value = " comment"></c:out></a>
 
     <a href="" class="card-link">share</a>
     
