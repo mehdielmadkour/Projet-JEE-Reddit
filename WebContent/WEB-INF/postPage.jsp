@@ -79,9 +79,18 @@
 			    
 			    <ul class="list-group list-group-flush">
 				    <c:forEach var="comment" items="${comments}">
-				    	<li class="list-group-item">
-				    		<c:out value="${comment.getContent()}"></c:out>
-						</li>
+				    	<c:if test="${!empty comment.getUser()}">
+							<li class="list-group-item">
+					    		<c:out value="${comment.getUser()} : " />
+					    		<c:out value="${comment.getContent()}" />
+							</li>
+						</c:if>
+						<c:if test="${empty comment.getUser()}">
+							<li class="list-group-item">
+					    		Anonymous :
+					    		<c:out value="${comment.getContent()}" />
+							</li>
+						</c:if>
 				    </c:forEach>
 				</ul>
 			  </div>
@@ -103,6 +112,7 @@
 			
 			      <div class="modal-body">
 			        <textarea class="form-control" name="comment" ><c:out value = "id: ${Post.getId()}"></c:out></textarea>
+			        <input type="hidden" name="author" value="<c:out value="${sessionScope.name}"/>"/>
 			        <input type="hidden" name="idPost" value="${Post.getId()}">
 			      </div>
 			
