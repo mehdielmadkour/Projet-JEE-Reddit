@@ -108,7 +108,7 @@
 				<p>Recent posts</p>
 				<c:forEach var="Post" items="${recentPosts}">
 				
-					<%@include file="post.jsp"%>
+					<%@include file="postCard.jsp"%>
 				
 				</c:forEach>
 			</div>
