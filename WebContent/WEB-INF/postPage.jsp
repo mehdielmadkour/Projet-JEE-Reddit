@@ -76,6 +76,14 @@
 			    	<input type="hidden" name="vote" value="-1"/>
 			    	<button class="btn" type="submit">DownVote</button>
 			    </form>
+			    
+			    <ul class="list-group list-group-flush">
+				    <c:forEach var="comment" items="${comments}">
+				    	<li class="list-group-item">
+				    		<c:out value="${comment.getContent()}"></c:out>
+						</li>
+				    </c:forEach>
+				</ul>
 			  </div>
 			</div>
 			

@@ -44,6 +44,9 @@ public class Post extends HttpServlet {
 		ressources.Post post = tasksDAO.getPost(this.idPost);
 		request.setAttribute("post", post);
 		
+		List<ressources.Comment> comments = tasksDAO.getPostComments(this.idPost);
+		request.setAttribute("comments", comments);
+		
 		getServletContext()
 		.getRequestDispatcher(url).
 		forward(request, response);

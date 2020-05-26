@@ -23,7 +23,7 @@ public class Comment implements Serializable {
 	private int id;
 	
 	@Column(name = "user")
-	private User user;
+	private String user;
 	
 	@Column(name = "likes")
 	private int like;
@@ -42,11 +42,11 @@ public class Comment implements Serializable {
 		this.id = id;
 	}
 
-	public User getUser() {
+	public String getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 
