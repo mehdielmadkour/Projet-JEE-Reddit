@@ -51,12 +51,8 @@ public class Post extends HttpServlet {
 		
 		System.out.println(post.getCommentNumber());
 		
-		if (post.getCommentNumber() > 0) {
-			List<ressources.Comment> comments = this.tasksDAO.getPostComments(post);
-			request.setAttribute("comments", comments);
-		} else {
-			request.setAttribute("comments", new HashSet<>());
-		}
+		List<ressources.Comment> comments = this.tasksDAO.getPostComments(post);
+		request.setAttribute("comments", comments);
 		
 		getServletContext()
 		.getRequestDispatcher(url).

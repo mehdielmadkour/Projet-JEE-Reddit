@@ -15,7 +15,7 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class IpFilter
  */
-@WebFilter("/")
+@WebFilter("/Home")
 public class IpFilter implements Filter {
 
 	FilterConfig fConfig;
@@ -40,8 +40,8 @@ public class IpFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
 		String ip = request.getRemoteHost();
-		fConfig.getServletContext().log("IP: " + ip);
-		FileWriter writer = new FileWriter("IPlog", true);
+		
+		FileWriter writer = new FileWriter("E:\\JEEworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\Projet-JEE-Reddit\\IPlog", true);
 		new PrintWriter(writer).println("IP: " + ip);
 		writer.close();
 		chain.doFilter(request, response);

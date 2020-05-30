@@ -51,8 +51,8 @@ public class Post implements Serializable{
 	@Column(name = "comment_number")
 	private int comment_number = 0;
 
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="post", orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<Comment> comments;
+	/*@OneToMany(cascade=CascadeType.ALL, mappedBy="post", orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Comment> comments;*/
 	
 	
 	public String getSubName() {
@@ -79,18 +79,16 @@ public class Post implements Serializable{
 		this.user = user;
 	}
 
-	public List<Comment> getComments() {
+	/*public List<Comment> getComments() {
 		
-		if (comment_number == 0) new ArrayList<>();
+		if (comment_number == 0) return new ArrayList<>();
 		return comments;
-	}
+	}*/
 
-	public void addComments(Comment comment) {
+	/*public void addComments(Comment comment) {
 		
-		if (comment_number == 0) this.comments = new ArrayList<>();
-		comment_number++;
 		this.comments.add(comment);
-	}
+	}*/
 
 	public int getVote() {
 		return vote;

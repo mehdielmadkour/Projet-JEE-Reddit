@@ -53,7 +53,7 @@ public class newPost extends HttpServlet {
 		//String CHEMIN = "C:\\Users\\Titi\\eclipse-workspace\\Reddit_project\\WebContent\\img\\";
 		SubReddit sub = tasksDAO.getSubRedditByName(this.subName);
 		ressources.Post post = new ressources.Post();
-		
+		System.out.println(CHEMIN);
 		if (part != null) {
 			String nomFichier = getNomFichier ( part );
 			
