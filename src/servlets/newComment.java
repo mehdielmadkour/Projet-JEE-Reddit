@@ -3,6 +3,7 @@ package servlets;
 import java.io.IOException;
 
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,7 @@ public class newComment extends HttpServlet {
        
 	private int idPost;
 	private String commentContent;
+	private String author;
 	
 	@EJB
 	private TasksDAO tasksDAO;
@@ -41,13 +43,14 @@ public class newComment extends HttpServlet {
 		Comment comment = new Comment();
 		comment.setContent(this.commentContent);
 		comment.setPostId(this.idPost);
+		comment.setUser(this.author);
 		//ressources.Post post = this.tasksDAO.getPost(this.idPost);
 		//post.addComments(comment);
 		
 		//tasksDAO.updatePost(post);
 		tasksDAO.newComment(comment);
 
-		response.sendRedirect("Home");
+		response.sendRedirect("Post");
 	}
 
 	/**
@@ -57,6 +60,7 @@ public class newComment extends HttpServlet {
 
 		if (request.getParameter("idPost") != null) this.idPost = Integer.valueOf(request.getParameter("idPost"));
 		if (request.getParameter("comment") != null) this.commentContent = request.getParameter("comment");
+		if (request.getParameter("author") != null) this.author = request.getParameter("author");
 		
 		response.sendRedirect("newComment");
 	}

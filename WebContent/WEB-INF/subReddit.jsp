@@ -37,17 +37,15 @@
 	  	</c:if>
 	</nav>
 
-<div class="container">
+	<div class="bg-all"> 
+	<div class="container">
 	
-		
-		<p>SubReddit</p>
-		<br>
 		<div class="row">
 			<div class="col-8">
 				<p>Popular posts</p>
 				<c:forEach var="Post" items="${posts}">
 				
-					<%@include file="post.jsp"%>
+					<%@include file="postCard.jsp"%>
 				
 				</c:forEach>
 			</div>
@@ -58,6 +56,7 @@
 				<%@include file="subList.jsp"%>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

@@ -1,4 +1,7 @@
 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -6,17 +9,14 @@
 </head>
 <body>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
 <div class="card">
 	<div class="card-header">
-	<a href="Post" class="card-link">
-		<c:out value = "${Post.getSubName()}   "></c:out>
-    	<c:out value = "Posted by ${Post.getUser()}"></c:out>
-    	
-	</a>
+	<form action="Post" method="post">
+		<input type="hidden" name="idPost" value="<c:out value = "${Post.getId()}"></c:out>"/>
+		<button type="submit" style="border: none; background: none">
+			<div class="card-link"><c:out value = "${Post.getSubName()}   Posted by ${Post.getUser()}" /></div>
+		</button>
+	</form>
     	
   	</div>
 	
