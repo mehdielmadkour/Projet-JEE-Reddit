@@ -66,9 +66,9 @@ public class TasksDAO {
 	
 	}
 	
-	public List<Comment> getPostComments(int postId){
+	public List<Comment> getPostComments(Post post){
 		
-		List<Comment> list = em.createQuery( "SELECT c FROM Comment c WHERE c.postId=:postId", Comment.class).setParameter("postId", postId).getResultList();
+		List<Comment> list = em.createQuery( "SELECT c FROM Comment c WHERE c.post=:post", Comment.class).setParameter("post", post).getResultList();
 		return list;
 	}
 	

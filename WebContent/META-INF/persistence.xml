@@ -9,7 +9,7 @@
     <class>ressources.SubReddit</class>
     <class>ressources.User</class>
     <properties>
-    	<property name="openjpa.DynamicEnhancementAgent" value="false"/>
+    	<property name="openjpa.DynamicEnhancementAgent" value="true"/>
 		<property name="openjpa.RuntimeUnenhancedClasses" value="supported" />
         <property name="openjpa.jdbc.DBDictionary" value="mysql" />
         <property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO" />

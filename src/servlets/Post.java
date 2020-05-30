@@ -2,7 +2,10 @@ package servlets;
 
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -44,8 +47,16 @@ public class Post extends HttpServlet {
 		ressources.Post post = tasksDAO.getPost(this.idPost);
 		request.setAttribute("post", post);
 		
-		List<ressources.Comment> comments = tasksDAO.getPostComments(this.idPost);
-		request.setAttribute("comments", comments);
+		//List<ressources.Comment> comments = tasksDAO.getPostComments(this.idPost);
+		
+		System.out.println(post.getCommentNumber());
+		
+		if (post.getCommentNumber() > 0) {
+			List<ressources.Comment> comments = this.tasksDAO.getPostComments(post);
+			request.setAttribute("comments", comments);
+		} else {
+			request.setAttribute("comments", new HashSet<>());
+		}
 		
 		getServletContext()
 		.getRequestDispatcher(url).

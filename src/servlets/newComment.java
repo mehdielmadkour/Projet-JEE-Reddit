@@ -42,9 +42,9 @@ public class newComment extends HttpServlet {
 
 		Comment comment = new Comment();
 		comment.setContent(this.commentContent);
-		comment.setPostId(this.idPost);
 		comment.setUser(this.author);
-		//ressources.Post post = this.tasksDAO.getPost(this.idPost);
+		ressources.Post post = this.tasksDAO.getPost(this.idPost);
+		comment.setPost(post);
 		//post.addComments(comment);
 		
 		//tasksDAO.updatePost(post);

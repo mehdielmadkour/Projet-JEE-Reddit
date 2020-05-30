@@ -7,9 +7,12 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,14 +28,11 @@ public class Comment implements Serializable {
 	@Column(name = "user")
 	private String user;
 	
-	@Column(name = "likes")
-	private int like;
-	
 	@Column(name = "content")
 	private String content;
 	
-	@Column(name = "postId")
-	private int postId;
+	@ManyToOne
+    private Post post;
 
 	public int getId() {
 		return id;
@@ -50,14 +50,6 @@ public class Comment implements Serializable {
 		this.user = user;
 	}
 
-	public int getLike() {
-		return like;
-	}
-
-	public void setLike(int like) {
-		this.like = like;
-	}
-
 	public String getContent() {
 		return content;
 	}
@@ -65,9 +57,9 @@ public class Comment implements Serializable {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	public void setPostId(int postId) {
-		this.postId = postId;
+
+	public void setPost(Post post) {
+		this.post = post;
 	}
 	
 }

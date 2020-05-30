@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.security.Timestamp;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +21,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.apache.commons.collections.map.HashedMap;
 
 @Entity
 @Table(name = "posts")
@@ -42,13 +48,11 @@ public class Post implements Serializable{
 	@Column(name = "content")
 	private String content;
 	
+	@Column(name = "comment_number")
+	private int comment_number = 0;
 
-	/*@OneToMany(
-        cascade = CascadeType.ALL,
-        orphanRemoval = true,
-        fetch = FetchType.LAZY
-    )
-	private List<Comment> comments = new ArrayList<>();*/
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="post", orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Comment> comments;
 	
 	
 	public String getSubName() {
@@ -75,13 +79,18 @@ public class Post implements Serializable{
 		this.user = user;
 	}
 
-	/*public List<Comment> getComments() {
+	public List<Comment> getComments() {
+		
+		if (comment_number == 0) new ArrayList<>();
 		return comments;
 	}
 
 	public void addComments(Comment comment) {
+		
+		if (comment_number == 0) this.comments = new ArrayList<>();
+		comment_number++;
 		this.comments.add(comment);
-	}*/
+	}
 
 	public int getVote() {
 		return vote;
@@ -105,5 +114,9 @@ public class Post implements Serializable{
 
 	public int getId() {
 		return id;
+	}
+
+	public int getCommentNumber() {
+		return comment_number;
 	}
 }
